@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '5.0'
+sudo: false
+cache:
+  directories:
+  - node_modules
+script:
+- npm run build
+deploy:
+  provider: s3
+  bucket: content.mrdeer.net
+  skip_cleanup: true
+  local-dir: dist
+  acl: public_read
+  region: eu-central-1
+  on:
+    repo: mr-deer/content
+  access_key_id: AKIAIJTJ7NMVXBI3WASQ
+  secret_access_key:
+    secure: rlpsEKMYy2DRe5fo80+A40NB35oKhSr26GBN5Xfq0AYyGSX2FxtOo1DplP76gfYneAzdPb7pEjQWXO9VgGONHOaimgqzB7q4F5wjp8cjBdJyyQ7p8RiJapRnBACvjsVNSi16mDzxCoNooto++aga58C6pCCWZNWbdcmhxQC15ysdik+z14lYMGd9P5RU61R+J8jzaHsteVJ+iysN/oCBG4NrpC8A5hGN9xli7dYUZ+sdJh5vJdecIqcrlN5ewloiDA/CoEqFWI2ZXk+AFpAv4qCkGCtMoCrtA/SKlx1KITCc3VziROKMvFnH58bO3Ub3goOJB1pSXsTZj/rWNEJQ6690dsvWG3DNe0/xEMKsGKoqLd2VzZSJdIv/4GkEDMl1b6jhZqKAyDulp7D+4JO28/z118emyBYRDr9UtUnH5fIYqSxvKvzsEZ1hI+70OkkDtWwtMwq3gGfS/b8WJkMkrlDycNaP/RHdwSj/E5kR3NiHYBBBN0YiEZhgx4/S419mNAo/7P+qHoIDLQWUSFduLrSS4qsDvxRu4xjkGcfSR6jdcf0hDXsDFSfvNFX+nXGq0JiL47hxPkTW2R9PZC9O0aizRhsf9Xn9HRr7bktKIV2xrNkDh3nfjYSGl+0+JOgqLtyVPa+YF79ydipwHZE+TJfcVA6OZLOB/H+wE2LY9TE=
