@@ -1,4 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import EditableParagraph from './components/EditableParagraph';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('app'));
+ReactDOM.render(<div>
+    <EditableParagraph />
+    <EditableParagraph />
+    <EditableParagraph />
+  </div>, document.getElementById('app'));
